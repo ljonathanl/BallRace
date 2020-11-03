@@ -678,7 +678,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 516355839}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!199 &150912706
 ParticleSystemRenderer:
@@ -5858,7 +5858,7 @@ Transform:
   m_LocalScale: {x: 1.01, y: 1.01, z: 1.01}
   m_Children: []
   m_Father: {fileID: 516355839}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &435242878
 MeshRenderer:
@@ -5938,8 +5938,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 909143406}
-  - {fileID: 150912705}
   - {fileID: 435242877}
+  - {fileID: 150912705}
   m_Father: {fileID: 65913302}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6620,7 +6620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &909143406
 Transform:
   m_ObjectHideFlags: 0
@@ -13669,8 +13669,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.6981132, g: 0.6952663, b: 0.6948202, a: 1}
-  m_Intensity: 3
+  m_Color: {r: 1, g: 0.9858491, b: 0.9858491, a: 1}
+  m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -15349,6 +15349,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6360811313668894000, guid: 604d9f33ad8831f4cbb75b6f3fd19307,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967294
       objectReference: {fileID: 0}
     - target: {fileID: 6360811313668894005, guid: 604d9f33ad8831f4cbb75b6f3fd19307,
         type: 3}

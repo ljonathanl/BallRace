@@ -48,9 +48,9 @@ public class VFXController : MonoBehaviour
         startColor.colorMax = ballController.color;
         main.startColor = startColor;
 
-        blurRenderer.material.SetFloat("_offset", Remap(Mathf.Clamp(ballController.velocity, 10, 40), 10, 40, 0, 0.02f));
+        // blurRenderer.material.SetFloat("_offset", Remap(Mathf.Clamp(ballController.velocity, 10, 30), 10, 30, 0, 0.01f));
 
         haloRenderer.material.SetColor("_HaloColor", ballController.color);
-        haloRenderer.material.SetFloat("_HaloAlpha", Mathf.Lerp(haloRenderer.material.GetFloat("_HaloAlpha"), terrainController.isOnColor ? 1 : 0, Time.deltaTime * 2));
+        haloRenderer.material.SetFloat("_HaloAlpha", Mathf.Lerp(haloRenderer.material.GetFloat("_HaloAlpha"), terrainController.isOnColor ? 0 : 0.8f, Time.deltaTime));
     }
 }

@@ -243,15 +243,15 @@ VisualEffect:
       - m_Value: 0.5
         m_Name: Circle Radius
         m_Overridden: 1
-      - m_Value: 3
+      - m_Value: 1.5
         m_Name: Lifetime
         m_Overridden: 1
       - m_Value: 0.3
         m_Name: Particle Size
         m_Overridden: 1
-      - m_Value: 1
+      - m_Value: 7
         m_Name: Period
-        m_Overridden: 0
+        m_Overridden: 1
       - m_Value: 61
         m_Name: Spawn Rate
         m_Overridden: 1
@@ -260,7 +260,7 @@ VisualEffect:
         m_Overridden: 1
     m_Vector2f:
       m_Array:
-      - m_Value: {x: -6, y: 6}
+      - m_Value: {x: -3, y: 3}
         m_Name: Turbulence Intensity Range
         m_Overridden: 1
     m_Vector3f:
@@ -279,8 +279,8 @@ VisualEffect:
       m_Array:
       - m_Value:
           serializedVersion: 2
-          key0: {r: 12.996038, g: 12.696218, b: 12.689528, a: 0}
-          key1: {r: 12.996038, g: 12.696218, b: 12.689528, a: 0.17254902}
+          key0: {r: 3.2470593, g: 3.1960585, b: 3.1960585, a: 0}
+          key1: {r: 6.4980187, g: 6.3619347, b: 6.3619347, a: 0.17254902}
           key2: {r: 9.734288, g: 4.332013, b: 0, a: 0}
           key3: {r: 9.734288, g: 4.332013, b: 0, a: 0}
           key4: {r: 0, g: 0, b: 0, a: 0}
