@@ -48,7 +48,7 @@ public class Hub : MonoBehaviour
             // var buttonColors = colorButton.colors;
             // buttonColors.normalColor = buttonColors.pressedColor = buttonColors.selectedColor = buttonColors.highlightedColor = flexibleColorPicker.color;
             // colorButton.colors = buttonColors;
-            ambientLight.color = color;
+            // ambientLight.color = color;
         }
         speedText.text = Mathf.Floor(ballController.velocity * 3.6f) + "KM/H";
     }

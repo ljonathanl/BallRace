@@ -53,7 +53,6 @@ public class BallController : MonoBehaviour
                 if (Input.GetButton("Jump")) {
                     rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
                 }
-                
             }
         }
         if (color != lastColor) {

@@ -7,13 +7,17 @@ public class VFXController : MonoBehaviour
     public GameObject ball;
 
     private BallController ballController;
+    private TerrainController terrainController;
     private ParticleSystem particle;
 
     public Renderer blurRenderer;
 
+    public Renderer haloRenderer;
+
     void Start()
     {
         ballController = ball.GetComponent<BallController>();
+        terrainController = ball.GetComponent<TerrainController>();
 
         particle = GetComponentInChildren<ParticleSystem>();
     }
@@ -45,5 +49,8 @@ public class VFXController : MonoBehaviour
         main.startColor = startColor;
 
         blurRenderer.material.SetFloat("_offset", Remap(Mathf.Clamp(ballController.velocity, 10, 40), 10, 40, 0, 0.02f));
+
+        haloRenderer.material.SetColor("_HaloColor", ballController.color);
+        haloRenderer.material.SetFloat("_HaloAlpha", Mathf.Lerp(haloRenderer.material.GetFloat("_HaloAlpha"), terrainController.isOnColor ? 1 : 0, Time.deltaTime * 2));
     }
 }
