@@ -55,6 +55,9 @@ public class RaceController : MonoBehaviour
     public string version = "0.0.1";
 
 
+    public Color[] colors;
+
+
     void Log(string message) {
         hub.infoText.GetComponent<AnimatedText>().ChangeText(message);
     }
@@ -147,7 +150,7 @@ public class RaceController : MonoBehaviour
             }
 
             hub.color = color;
-            color = Random.ColorHSV(0, 1, 0, 1, 0.5f, 1);
+            color = GetRandomColor();
             nextCheckPoint.ChangeColor(color);
         }
     
@@ -189,7 +192,7 @@ public class RaceController : MonoBehaviour
         nextCheckPoint.ChangeText("START");
 
 
-        color = Random.ColorHSV(0, 1, 0, 1, 0.5f, 1);
+        color = GetRandomColor();
         nextCheckPoint.ChangeColor(color);
 
         ball.transform.position = startPosition.position;
@@ -205,6 +208,12 @@ public class RaceController : MonoBehaviour
         currentLap = 0;
         isRacing = false;
         onlineController.LoadLeaderBoard();
+    }
+
+    Color GetRandomColor() {
+        return Random.ColorHSV(0, 1, 0.5f, 1, 0.5f, 0.8f);
+
+        //return colors[Random.Range(0, colors.Length)];
     }
 
     public void SetLeaderBoard(LeaderBoard leaderBoard) {

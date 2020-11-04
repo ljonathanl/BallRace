@@ -28,6 +28,8 @@ public class TerrainController : MonoBehaviour
 
     public float colorBonus = 0.2f;
 
+    public Color currentColor;
+
     public int TraceSize = 3;
     private float lastBonusSpeed;
 
@@ -99,20 +101,21 @@ public class TerrainController : MonoBehaviour
         // isOnCircuit = 0;
         // isOnZone = false;
         // only update if we move
-        if (ballController.distanceToGround < 1)
-        {
             
-            if (Vector3.Distance(transform.position, lastPos) > MinDistance) {
-                // convert world coords to terrain coords
-                mapX = (int)(((transform.position.x - terrainPosition.x) / terrainData.size.x) * terrainData.alphamapWidth);
-                mapY = (int)(((transform.position.z - terrainPosition.z) / terrainData.size.y) * terrainData.alphamapHeight);
+        if (Vector3.Distance(transform.position, lastPos) > MinDistance) {
+            // convert world coords to terrain coords
+            mapX = (int)(((transform.position.x - terrainPosition.x) / terrainData.size.x) * terrainData.alphamapWidth);
+            mapY = (int)(((transform.position.z - terrainPosition.z) / terrainData.size.y) * terrainData.alphamapHeight);
 
-                if (mapX > TraceSize && mapX < (terrainData.alphamapWidth - TraceSize) && mapY > TraceSize && mapY < (terrainData.alphamapHeight - TraceSize)) {
-                    element = terrainData.GetAlphamaps(mapX - TraceSize, mapY - TraceSize, TraceSize * 2, TraceSize * 2);
-                    isOnCircuit = element[TraceSize, TraceSize, 1];
+            if (mapX > TraceSize && mapX < (terrainData.alphamapWidth - TraceSize) && mapY > TraceSize && mapY < (terrainData.alphamapHeight - TraceSize)) {
+                element = terrainData.GetAlphamaps(mapX - TraceSize, mapY - TraceSize, TraceSize * 2, TraceSize * 2);
+                isOnCircuit = element[TraceSize, TraceSize, 1];
+                isOnZone = true;
+                
+                if (ballController.distanceToGround < 1) 
+                {
                     isOnColor = (element[TraceSize, TraceSize, 2] + element[TraceSize, TraceSize, 3] + element[TraceSize, TraceSize, 4]) > 0;
                     bonusSpeed = (isOnCircuit - 1) * zoneFriction + (isOnColor ? colorBonus : 0);
-                    
                     for (int i = 0; i < TraceSize * 2; i++)
                     {
                         for (int j = 0; j < TraceSize * 2; j++)
@@ -126,20 +129,23 @@ public class TerrainController : MonoBehaviour
                     terrainData.SetAlphamaps(mapX - TraceSize, mapY - TraceSize, element);
 
                     lastPos = transform.position;
-                    isOnZone = true;
+                    
                 } else {
-                    bonusSpeed = -floorFriction;
-                    isOnZone = false;
+                    bonusSpeed = 0;
                     isOnColor = false;
-                    isOnCircuit = 0;
                 }
+
+                currentColor = new Color(element[TraceSize, TraceSize, 2], element[TraceSize, TraceSize, 3], element[TraceSize, TraceSize, 4]);
             } else {
-                bonusSpeed = lastBonusSpeed;
+                bonusSpeed = -floorFriction;
+                isOnZone = false;
+                isOnColor = false;
+                isOnCircuit = 0;
+                currentColor = Color.black;
             }
         } else {
-            isOnColor = false;
-            isOnCircuit = 0;
-        } 
+            bonusSpeed = lastBonusSpeed;
+        }
         ballController.bonusSpeed = ballController.speed * bonusSpeed;
         lastBonusSpeed = bonusSpeed;
     }

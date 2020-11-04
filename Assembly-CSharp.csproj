@@ -149,6 +149,12 @@
      <Compile Include="Assets\ExternalLibs\FlexibleColorPicker\ExampleScene\FCP_ExampleScript.cs" />
      <Compile Include="Assets\ExternalLibs\PE2D\Particle Effects\Scripts\Particles\ParticleEffector.cs" />
      <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Audio\G_AudioMonitor.cs" />
+     <Compile Include="Assets\ExternalLibs\SE Natural Bloom\Demo Scene\Scripts\SENBDLGlobal.cs" />
+     <Compile Include="Assets\ExternalLibs\SE Natural Bloom\Demo Scene\Scripts\SENBDLMainCube.cs" />
+     <Compile Include="Assets\ExternalLibs\SE Natural Bloom\Demo Scene\Scripts\SENBDLGlowingOrbitingCube.cs" />
+     <Compile Include="Assets\ExternalLibs\SE Natural Bloom\Demo Scene\Scripts\SENBDLCameraAnimation.cs" />
+     <Compile Include="Assets\ExternalLibs\SE Natural Bloom\Demo Scene\Scripts\SENBDLOrbitingCube.cs" />
+     <Compile Include="Assets\ExternalLibs\SE Natural Bloom\Scripts\SENaturalBloomAndDirtyLens.cs" />
      <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
      <None Include="Assets\ExternalLibs\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
      <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\GlobalFog.shader" />
@@ -156,6 +162,7 @@
      <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrain.shader" />
      <None Include="Assets\BallRace\TextShader.shader" />
      <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\DLAA.shader" />
+     <None Include="Assets\ExternalLibs\SE Natural Bloom\Shaders\SEParticlesAdditive.shader" />
      <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
      <None Include="Assets\ExternalLibs\Mirza Beig\_DOCS\README - Inferno VFX.txt" />
      <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset3.shader" />
@@ -174,6 +181,7 @@
      <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Apply.shader" />
      <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Adaptation.shader" />
      <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
+     <None Include="Assets\ExternalLibs\SE Natural Bloom\Shaders\SENaturalBloomAndDirtyLens.shader" />
      <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlur.shader" />
      <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceAmbientObscurance.shader" />
      <None Include="Assets\ExternalLibs\AllSkyFree\AllSkyFree_Readme.txt" />
@@ -213,6 +221,7 @@
      <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrainDX11.shader" />
      <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
      <None Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Font\Roboto\LICENSE.txt" />
+     <None Include="Assets\ExternalLibs\SE Natural Bloom\Shaders\SEEmissiveTextured.shader" />
      <None Include="Assets\ExternalLibs\FlexibleColorPicker\Materials\FCP_Gradient.shader" />
      <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
      <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />

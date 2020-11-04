@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.VFX;
 using UnityEngine.Rendering;
 using System.Linq;
+using UnityEngine.Rendering.Universal;
 
 public class Hub : MonoBehaviour
 {
@@ -66,6 +67,11 @@ public class Hub : MonoBehaviour
         }
 
         ballCamera.GetComponent<Volume>().enabled = value;
+    }
+
+    public void EnableHD(bool value) {
+        var urp = (UniversalRenderPipelineAsset) GraphicsSettings.currentRenderPipeline;
+        urp.renderScale = value ? 2 : 1;
     }
 
 
