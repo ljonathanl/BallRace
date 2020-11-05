@@ -36,6 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\ExternalLibs\SE Natural Bloom\Demo Scene\Scripts\SENBDLGlobal.cs" />
      <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Fps\G_FpsText.cs" />
      <Compile Include="Assets\ExternalLibs\FlexibleColorPicker\Scripts\FCP_SpriteMeshEditor.cs" />
      <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\TiltShift.cs" />
@@ -56,6 +57,7 @@
      <Compile Include="Assets\ExternalLibs\PE2D\Particle Effects\Scripts\Demo\DemoParticleEmitterSwitcher.cs" />
      <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
      <Compile Include="Assets\ExternalLibs\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\LoopingParticleSystemsManager.cs" />
+     <Compile Include="Assets\ExternalLibs\SE Natural Bloom\Demo Scene\Scripts\SENBDLMainCube.cs" />
      <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />
      <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\GraphyManager.cs" />
      <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\Blur.cs" />
@@ -82,6 +84,7 @@
      <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\SunShafts.cs" />
      <Compile Include="Assets\BallRace\Scripts\BallHubController.cs" />
      <Compile Include="Assets\BallRace\Scripts\VFXController.cs" />
+     <Compile Include="Assets\ExternalLibs\SE Natural Bloom\Demo Scene\Scripts\SENBDLGlowingOrbitingCube.cs" />
      <Compile Include="Assets\ExternalLibs\PE2D\Particle Effects\Scripts\Demo\DemoConstraintSwitcher.cs" />
      <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Util\G_ExtensionMethods.cs" />
      <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scene\Customization Scripts\UpdateTextWithSliderValue.cs" />
@@ -107,6 +110,7 @@
      <Compile Include="Assets\ExternalLibs\NeonSphere - Starter Pack\Scripts\PlayerController.cs" />
      <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scene\Customization Scripts\ForceSliderToPowerOf2.cs" />
      <Compile Include="Assets\ExternalLibs\PE2D\Particle Effects\Scripts\Particles\CustomParticle.cs" />
+     <Compile Include="Assets\ExternalLibs\SE Natural Bloom\Demo Scene\Scripts\SENBDLCameraAnimation.cs" />
      <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\NoiseAndGrain.cs" />
      <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scene\Customization Scripts\ForceSliderToMultipleOf3.cs" />
      <Compile Include="Assets\ExternalLibs\PE2D\Particle Effects\Scripts\Particles\ParticleFactory.cs" />
@@ -121,6 +125,7 @@
      <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\CameraMotionBlur.cs" />
      <Compile Include="Assets\ExternalLibs\PE2D\Particle Effects\Scripts\Particles\Emitters\ParticleEmitterInObjectDirection.cs" />
      <Compile Include="Assets\ExternalLibs\PE2D\Particle Effects\Scripts\Particles\ParticleRenderer.cs" />
+     <Compile Include="Assets\ExternalLibs\SE Natural Bloom\Demo Scene\Scripts\SENBDLOrbitingCube.cs" />
      <Compile Include="Assets\ExternalLibs\PE2D\Particle Effects\Scripts\Demo\DemoSceneSwitcher.cs" />
      <Compile Include="Assets\ExternalLibs\PE2D\Particle Effects\Scripts\Particles\Emitters\CustomParticleEmitter.cs" />
      <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Util\G_Singleton.cs" />
@@ -141,6 +146,7 @@
      <Compile Include="Assets\ExternalLibs\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\ParticleManager.cs" />
      <Compile Include="Assets\BallRace\Scripts\BallController.cs" />
      <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\EdgeDetection.cs" />
+     <Compile Include="Assets\ExternalLibs\SE Natural Bloom\Scripts\SENaturalBloomAndDirtyLens.cs" />
      <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionLookup.cs" />
      <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\Tonemapping.cs" />
      <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Ram\G_RamMonitor.cs" />
@@ -149,12 +155,7 @@
      <Compile Include="Assets\ExternalLibs\FlexibleColorPicker\ExampleScene\FCP_ExampleScript.cs" />
      <Compile Include="Assets\ExternalLibs\PE2D\Particle Effects\Scripts\Particles\ParticleEffector.cs" />
      <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Audio\G_AudioMonitor.cs" />
-     <Compile Include="Assets\ExternalLibs\SE Natural Bloom\Demo Scene\Scripts\SENBDLGlobal.cs" />
-     <Compile Include="Assets\ExternalLibs\SE Natural Bloom\Demo Scene\Scripts\SENBDLMainCube.cs" />
-     <Compile Include="Assets\ExternalLibs\SE Natural Bloom\Demo Scene\Scripts\SENBDLGlowingOrbitingCube.cs" />
-     <Compile Include="Assets\ExternalLibs\SE Natural Bloom\Demo Scene\Scripts\SENBDLCameraAnimation.cs" />
-     <Compile Include="Assets\ExternalLibs\SE Natural Bloom\Demo Scene\Scripts\SENBDLOrbitingCube.cs" />
-     <Compile Include="Assets\ExternalLibs\SE Natural Bloom\Scripts\SENaturalBloomAndDirtyLens.cs" />
+     <Compile Include="Assets\BallRace\Scripts\BB8Controller.cs" />
      <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
      <None Include="Assets\ExternalLibs\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
      <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\GlobalFog.shader" />
@@ -777,6 +778,9 @@
     <Reference Include="Unity.Timeline.Editor">
         <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.TerrainTools">
+        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.TerrainTools.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
         <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
@@ -842,6 +846,9 @@
     </Reference>
     <Reference Include="Unity.TextMeshPro">
         <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TerrainTools.Editor">
+        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.TerrainTools.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
         <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>

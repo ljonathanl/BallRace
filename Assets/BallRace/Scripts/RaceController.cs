@@ -16,7 +16,7 @@ public class RaceController : MonoBehaviour
 
     public CheckPointController[] checkPoints;
 
-    private CheckPointController nextCheckPoint;
+    public CheckPointController nextCheckPoint;
 
     public Transform startPosition;
     public int nextCheckPointIndex = 0;
@@ -58,6 +58,8 @@ public class RaceController : MonoBehaviour
     public Color[] colors;
 
 
+    private Coroutine playRandomColorCoroutine;
+
     void Log(string message) {
         hub.infoText.GetComponent<AnimatedText>().ChangeText(message);
     }
@@ -76,6 +78,14 @@ public class RaceController : MonoBehaviour
     IEnumerator PlayWelcome() {
         yield return new WaitForSeconds(1);
         PlaySound(welcomeAudio);
+    }
+
+    IEnumerator PlayRandomColor() {
+        while (true) {
+            yield return new WaitForSeconds(1);
+            color = GetRandomColor();
+            hub.color = color;
+        }
     }
 
     void Update() {
@@ -126,6 +136,7 @@ public class RaceController : MonoBehaviour
                     isRacing = false;
                     currentLap = 0;
                     CheckLeaderBoard();
+                    playRandomColorCoroutine = StartCoroutine(PlayRandomColor());
                     return;
                 }
                 if (currentLap == maxLaps) {
@@ -180,6 +191,10 @@ public class RaceController : MonoBehaviour
     }
 
     public void Reset() {
+        if (playRandomColorCoroutine != null) {
+            StopCoroutine(playRandomColorCoroutine);
+        }
+
         foreach(var checkPoint in checkPoints) {
             checkPoint.ballController = ballController;
             checkPoint.raceController = this;
