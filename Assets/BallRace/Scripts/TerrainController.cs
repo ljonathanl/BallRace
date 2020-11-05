@@ -5,7 +5,7 @@ using UnityEngine;
 public class TerrainController : MonoBehaviour
 {
 
-    public Terrain terrain;
+    private Terrain terrain;
 
     private float[,,] element;
 
@@ -35,40 +35,29 @@ public class TerrainController : MonoBehaviour
 
     private bool isReliefEnabled;
 
-    void Awake()
-    {
-        terrainData = terrain.terrainData;
-        lastPos = transform.position;
-    }
 
     void Start()
     {
-        terrainPosition = terrain.transform.position;
         ballController = GetComponent<BallController>();
-        alphaMaps = terrainData.GetAlphamaps(0, 0, terrainData.alphamapWidth, terrainData.alphamapHeight);
-        heightMap = terrainData.GetHeights(0, 0, terrainData.heightmapResolution, terrainData.heightmapResolution);
-
         ballRigidBody = ballController.GetComponent<Rigidbody>();
-
-        Debug.Log("Size alphas: " + (terrainData.alphamapWidth * terrainData.alphamapHeight * terrainData.alphamapLayers) 
-            + " = " + terrainData.alphamapWidth + " x " + terrainData.alphamapHeight + " x " + terrainData.alphamapLayers
-            + " | heights " + (terrainData.heightmapResolution * terrainData.heightmapResolution) 
-            + " = " + terrainData.heightmapResolution + "²");
-
-        // for (int i = 0; i < TraceSize * 2; i++)
-        // {
-        //     for (int j = 0; j < TraceSize * 2; j++)
-        //     {
-        //         var alpha = 1 - (float) Mathf.Abs((TraceSize - i) + (TraceSize - j)) / (2 * TraceSize); 
-        //         Debug.Log(" " + i + " " + j + " " + alpha);
-        //     }
-        // }
     }
 
-    public void Reset() {
-        terrainData.SetAlphamaps(0, 0, alphaMaps);
-        if (isReliefEnabled)
-            terrainData.SetHeights(0, 0, heightMap);
+    public void SetTerrain(Terrain terrain) {
+        this.terrain = terrain;
+        terrainData = terrain.terrainData;
+        lastPos = transform.position;
+        terrainPosition = terrain.transform.position;
+        alphaMaps = terrainData.GetAlphamaps(0, 0, terrainData.alphamapWidth, terrainData.alphamapHeight);
+        heightMap = terrainData.GetHeights(0, 0, terrainData.heightmapResolution, terrainData.heightmapResolution);
+    }
+
+    public void CleanTerrain() 
+    {
+        if (terrainData) {
+            terrainData.SetAlphamaps(0, 0, alphaMaps);
+            if (isReliefEnabled)
+                terrainData.SetHeights(0, 0, heightMap);
+        }
     }
 
     public void EnableRelief(bool value) 
@@ -92,7 +81,7 @@ public class TerrainController : MonoBehaviour
     void OnDestroy()
     {
         isReliefEnabled = true;
-        Reset();
+        CleanTerrain();
     }
 
     void LateUpdate()

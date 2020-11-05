@@ -37,6 +37,8 @@ public class Hub : MonoBehaviour
     public Toggle vfxToggle;
     public Toggle hdToggle;
 
+    public bool isGamePaused = false;
+
 
     void Start() {
         var isSoundEnabled = PlayerPrefs.GetFloat("Sound", 1) == 1;
@@ -67,6 +69,12 @@ public class Hub : MonoBehaviour
             // ambientLight.color = color;
         }
         speedText.text = Mathf.Floor(ballController.velocity * 3.6f) + "KM/H";
+
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            isGamePaused = !isGamePaused;
+            Time.timeScale = isGamePaused ? 0 : 1;
+            AudioListener.pause = isGamePaused;
+        }
     }
 
 

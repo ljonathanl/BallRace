@@ -8,22 +8,25 @@ public class RaceController : MonoBehaviour
 
     public GameObject ball;
 
+    public LevelController currentLevel;
+
+    public LevelController[] levels;
+
     public BallController ballController;
 
     public TerrainController terrainController;
 
     public OnlineController onlineController;
 
-    public CheckPointController[] checkPoints;
 
     public CheckPointController nextCheckPoint;
 
-    public Transform startPosition;
     public int nextCheckPointIndex = 0;
 
     public Color color;
 
     public Hub hub;
+
 
     public int maxLaps = 5;
 
@@ -68,6 +71,7 @@ public class RaceController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SetLevel(currentLevel);
         Reset();
         playerName = PlayerPrefs.GetString("Name", "UKN");
         Log("Welcome to BallRace (v" + version + ") !!!");
@@ -147,8 +151,8 @@ public class RaceController : MonoBehaviour
                 }
                 lapTime = 0;
             }
-            nextCheckPointIndex = (nextCheckPointIndex + 1) % checkPoints.Length;
-            nextCheckPoint = checkPoints[nextCheckPointIndex];
+            nextCheckPointIndex = (nextCheckPointIndex + 1) % currentLevel.checkPoints.Length;
+            nextCheckPoint = currentLevel.checkPoints[nextCheckPointIndex];
             nextCheckPoint.gameObject.SetActive(true);
             if (nextCheckPointIndex == 0) {
                 if (currentLap == maxLaps) {
@@ -195,14 +199,14 @@ public class RaceController : MonoBehaviour
             StopCoroutine(playRandomColorCoroutine);
         }
 
-        foreach(var checkPoint in checkPoints) {
+        foreach(var checkPoint in currentLevel.checkPoints) {
             checkPoint.ballController = ballController;
             checkPoint.raceController = this;
             checkPoint.gameObject.SetActive(false);
         }
 
         nextCheckPointIndex = 0;
-        nextCheckPoint = checkPoints[0];
+        nextCheckPoint = currentLevel.checkPoints[0];
         nextCheckPoint.gameObject.SetActive(true);
         nextCheckPoint.ChangeText("START");
 
@@ -210,10 +214,10 @@ public class RaceController : MonoBehaviour
         color = GetRandomColor();
         nextCheckPoint.ChangeColor(color);
 
-        ball.transform.position = startPosition.position;
-        ballController.rotation = startPosition.rotation.eulerAngles.y;
+        ball.transform.position = currentLevel.startPosition.position;
+        ballController.rotation = currentLevel.startPosition.rotation.eulerAngles.y;
 
-        terrainController.Reset();
+        terrainController.CleanTerrain();
 
         timeElapsed = 0;
         lapTime = 0;
@@ -223,6 +227,23 @@ public class RaceController : MonoBehaviour
         currentLap = 0;
         isRacing = false;
         onlineController.LoadLeaderBoard();
+    }
+
+    public void SetLevel(int levelNumber) 
+    {
+        SetLevel(levels[levelNumber]);
+    }
+
+    public void SetLevel(LevelController level) 
+    {
+        foreach(var checkPoint in currentLevel.checkPoints) {
+            checkPoint.gameObject.SetActive(false);
+        }
+        terrainController.CleanTerrain();
+        currentLevel = level;
+        terrainController.SetTerrain(currentLevel.terrain);
+        transform.position = currentLevel.terrain.transform.position;
+        Reset();
     }
 
     Color GetRandomColor() {

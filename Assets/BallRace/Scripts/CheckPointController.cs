@@ -16,9 +16,12 @@ public class CheckPointController : MonoBehaviour
     public Renderer checkPointHubRenderer;
 
 
+
     void Update() {
-        text.transform.rotation = Quaternion.Euler(0, ballController.rotation, 0);
-        textHub.transform.rotation = Quaternion.Euler(90, 0, 0);
+        if (ballController) {
+            text.transform.rotation = Quaternion.Euler(0, ballController.rotation, 0);
+            textHub.transform.rotation = Quaternion.Euler(90, 0, 0);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
