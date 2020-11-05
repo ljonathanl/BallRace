@@ -49,6 +49,7 @@ public class RaceController : MonoBehaviour
     public AudioClip finalLapAudio;
 
     public bool isRacing = false;
+    public bool isNewRecord = false;
 
     // public UnityEvent OnLeaderBoardChange;
     public LeaderBoard leaderBoard;
@@ -185,6 +186,7 @@ public class RaceController : MonoBehaviour
             leaderBoard.raceTimes.RemoveAt(leaderBoard.raceTimes.Count - 1);
             SetLeaderBoard(leaderBoard);
             onlineController.SaveLeaderBoard();
+            isNewRecord = true;
             Log("NEW RECORD !!! CONGRATULATION !!!");
             PlaySound(newRecordAudio);
         } else {
@@ -226,6 +228,7 @@ public class RaceController : MonoBehaviour
 
         currentLap = 0;
         isRacing = false;
+        isNewRecord = false;
         onlineController.LoadLeaderBoard();
     }
 

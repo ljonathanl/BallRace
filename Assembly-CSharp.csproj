@@ -157,6 +157,7 @@
      <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Audio\G_AudioMonitor.cs" />
      <Compile Include="Assets\BallRace\Scripts\BB8Controller.cs" />
      <Compile Include="Assets\BallRace\Scripts\LevelController.cs" />
+     <Compile Include="Assets\BallRace\Scripts\CreateCone.cs" />
      <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
      <None Include="Assets\ExternalLibs\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
      <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\GlobalFog.shader" />

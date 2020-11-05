@@ -17,6 +17,8 @@ public class BB8Controller : MonoBehaviour
     public Renderer headRenderer;
     public Renderer headHaloRenderer;
 
+    public Renderer lightRenderer;
+
     private Material headMaterial;
     private Material headHaloMaterial;
 
@@ -38,8 +40,13 @@ public class BB8Controller : MonoBehaviour
             Vector3 relativePos = raceController.nextCheckPoint.transform.position - transform.position;
             Quaternion toRotation = Quaternion.LookRotation(relativePos);
             transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, Time.deltaTime);
+            lightRenderer.gameObject.SetActive(false);
         } else {
-            transform.Rotate(Vector3.up);
+            transform.rotation = Quaternion.Euler(0, Time.frameCount / 2, 0); 
+            if (raceController.isNewRecord) {
+                lightRenderer.gameObject.SetActive(true);
+                lightRenderer.material.SetColor("_LightColor", ball.color);
+            }
         }
 
         headHaloMaterial.SetColor("_HaloColor", ball.color);
