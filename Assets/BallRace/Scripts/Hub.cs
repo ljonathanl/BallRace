@@ -10,7 +10,7 @@ using UnityEngine.Rendering.Universal;
 public class Hub : MonoBehaviour
 {
 
-    public BallController ballController;
+    public Model.Ball ball = Model.Game.instance.ball;
 
     public BallCamera ballCamera;
 
@@ -61,14 +61,14 @@ public class Hub : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ballController.color != color) {
-            ballController.color = color;
+        if (ball.color != color) {
+            ball.color = color;
             // var buttonColors = colorButton.colors;
             // buttonColors.normalColor = buttonColors.pressedColor = buttonColors.selectedColor = buttonColors.highlightedColor = flexibleColorPicker.color;
             // colorButton.colors = buttonColors;
             // ambientLight.color = color;
         }
-        speedText.text = Mathf.Floor(ballController.velocity * 3.6f) + "KM/H";
+        speedText.text = Mathf.Floor(ball.velocity * 3.6f) + "KM/H";
 
         if (Input.GetKeyDown(KeyCode.Escape)) {
             isGamePaused = !isGamePaused;

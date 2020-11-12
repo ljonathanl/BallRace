@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BB8Controller : MonoBehaviour
 {
-    public BallController ball;
+    public Model.Ball ball = Model.Game.instance.ball;
 
-    public TerrainController terrainController;
+    public Model.Terrain terrain = Model.Game.instance.terrain;
 
 
     public RaceController raceController;
@@ -19,6 +19,8 @@ public class BB8Controller : MonoBehaviour
 
     public Renderer lightRenderer;
 
+    public Light spotLight;
+
     private Material headMaterial;
     private Material headHaloMaterial;
 
@@ -30,27 +32,31 @@ public class BB8Controller : MonoBehaviour
         startPosition = bb8.localPosition;
     }
 
+    private float angle = 0;
+
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = ball.transform.position;
+        transform.position = ball.position;
         headMaterial.color = ball.color;
 
-        if (raceController.isRacing) {
+        if (raceController.race.isRacing) {
             Vector3 relativePos = raceController.nextCheckPoint.transform.position - transform.position;
             Quaternion toRotation = Quaternion.LookRotation(relativePos);
             transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, Time.deltaTime);
             lightRenderer.gameObject.SetActive(false);
         } else {
-            transform.rotation = Quaternion.Euler(0, Time.frameCount / 2, 0); 
-            if (raceController.isNewRecord) {
+            angle = (angle + Time.deltaTime * 100) % 360;
+            transform.rotation = Quaternion.Euler(0, angle, 0); 
+            lightRenderer.material.SetColor("_LightColor", ball.color);
+            spotLight.color = ball.color;
+            if (raceController.race.isNewRecord) {
                 lightRenderer.gameObject.SetActive(true);
-                lightRenderer.material.SetColor("_LightColor", ball.color);
             }
         }
 
         headHaloMaterial.SetColor("_HaloColor", ball.color);
-        headHaloMaterial.SetFloat("_HaloAlpha", Mathf.Lerp(headHaloMaterial.GetFloat("_HaloAlpha"), terrainController.isOnColor ? 0 : 1f, Time.deltaTime * 3));
+        headHaloMaterial.SetFloat("_HaloAlpha", Mathf.Lerp(headHaloMaterial.GetFloat("_HaloAlpha"), terrain.isOnColor ? 0 : 1f, Time.deltaTime * 3));
 
         bb8.localPosition = Vector3.Lerp(bb8.localPosition, startPosition + Vector3.up * Remap(Mathf.Clamp(ball.velocity, 0, 20), 0, 20, 0.1f, -0.1f), Time.deltaTime);
 

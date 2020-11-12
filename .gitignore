@@ -25,3 +25,7 @@ Assets/Tayx/
 Assets/Scenes/
 Builds/
 Assets/ExternalLibs/
+Assets/Plugins/
+Assets/Plugins.meta
+UniRx.csproj
+UniRx.Examples.csproj

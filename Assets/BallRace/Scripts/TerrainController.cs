@@ -5,45 +5,43 @@ using UnityEngine;
 public class TerrainController : MonoBehaviour
 {
 
-    private Terrain terrain;
+    public Model.Terrain terrain = Model.Game.instance.terrain;
+
+    public Model.Ball ball = Model.Game.instance.ball;
+
+
+    private Terrain terrainGameObject;
 
     private float[,,] element;
 
-    public float isOnCircuit;
-    public bool isOnColor;
+    // public float isOnCircuit;
+    // public bool isOnColor;
     private int mapX;
     private int mapY;
     private TerrainData terrainData;
     private Vector3 terrainPosition;
-    private BallController ballController;
+    // private BallController ballController;
     private float[,,] alphaMaps;
     private float[,] heightMap;
-    private Rigidbody ballRigidBody;
     private Vector3 lastPos;
-    private bool isOnZone;
-    public float MinDistance = 0.1f;
+    // private bool isOnZone;
+    // public float MinDistance = 0.1f;
 
-    public float floorFriction = 0.8f;
-    public float zoneFriction = 0.5f;
+    // public float floorFriction = 0.8f;
+    // public float zoneFriction = 0.5f;
 
-    public float colorBonus = 0.2f;
+    // public float colorBonus = 0.2f;
 
-    public Color currentColor;
+    // public Color currentColor;
 
-    public int TraceSize = 3;
+    // public int TraceSize = 3;
     private float lastBonusSpeed;
 
     private bool isReliefEnabled;
 
 
-    void Start()
-    {
-        ballController = GetComponent<BallController>();
-        ballRigidBody = ballController.GetComponent<Rigidbody>();
-    }
-
     public void SetTerrain(Terrain terrain) {
-        this.terrain = terrain;
+        this.terrainGameObject = terrain;
         terrainData = terrain.terrainData;
         lastPos = transform.position;
         terrainPosition = terrain.transform.position;
@@ -91,28 +89,31 @@ public class TerrainController : MonoBehaviour
         // isOnZone = false;
         // only update if we move
             
-        if (Vector3.Distance(transform.position, lastPos) > MinDistance) {
+        if (Vector3.Distance(transform.position, lastPos) > terrain.minDistance) {
             // convert world coords to terrain coords
             mapX = (int)(((transform.position.x - terrainPosition.x) / terrainData.size.x) * terrainData.alphamapWidth);
             mapY = (int)(((transform.position.z - terrainPosition.z) / terrainData.size.y) * terrainData.alphamapHeight);
+            // Debug.Log(Time.timeSinceLevelLoad + " X: " + mapX  + " Y:" + mapY);
 
+            var TraceSize = terrain.traceSize;
             if (mapX > TraceSize && mapX < (terrainData.alphamapWidth - TraceSize) && mapY > TraceSize && mapY < (terrainData.alphamapHeight - TraceSize)) {
                 element = terrainData.GetAlphamaps(mapX - TraceSize, mapY - TraceSize, TraceSize * 2, TraceSize * 2);
-                isOnCircuit = element[TraceSize, TraceSize, 1];
-                isOnZone = true;
+                terrain.isOnCircuit = element[TraceSize, TraceSize, 1];
+                terrain.isOnZone = true;
                 
-                if (ballController.distanceToGround < 1) 
+                if (ball.distanceToGround < 1) 
                 {
-                    isOnColor = (element[TraceSize, TraceSize, 2] + element[TraceSize, TraceSize, 3] + element[TraceSize, TraceSize, 4]) > 0;
-                    bonusSpeed = (isOnCircuit - 1) * zoneFriction + (isOnColor ? colorBonus : 0);
+                    terrain.isOnColor = (element[TraceSize, TraceSize, 2] + element[TraceSize, TraceSize, 3] + element[TraceSize, TraceSize, 4]) > 0;
+                    bonusSpeed = (terrain.isOnCircuit - 1) * terrain.zoneFriction + (terrain.isOnColor ? terrain.colorBonus : 0);
+                    var isOnCircuit = terrain.isOnCircuit;
                     for (int i = 0; i < TraceSize * 2; i++)
                     {
                         for (int j = 0; j < TraceSize * 2; j++)
                         {
                             var alpha = 1 - (float) (Mathf.Abs(TraceSize - i) + Mathf.Abs(TraceSize - j)) / (2 * TraceSize); 
-                            element[i, j, 2] = Mathf.Min(element[i, j, 2] + ballController.color.r * isOnCircuit * alpha, ballController.color.r);
-                            element[i, j, 3] = Mathf.Min(element[i, j, 3] + ballController.color.g * isOnCircuit * alpha, ballController.color.g);
-                            element[i, j, 4] = Mathf.Min(element[i, j, 4] + ballController.color.b * isOnCircuit * alpha, ballController.color.b);
+                            element[i, j, 2] = Mathf.Min(element[i, j, 2] + ball.color.r * isOnCircuit * alpha, ball.color.r);
+                            element[i, j, 3] = Mathf.Min(element[i, j, 3] + ball.color.g * isOnCircuit * alpha, ball.color.g);
+                            element[i, j, 4] = Mathf.Min(element[i, j, 4] + ball.color.b * isOnCircuit * alpha, ball.color.b);
                         }
                     }
                     terrainData.SetAlphamaps(mapX - TraceSize, mapY - TraceSize, element);
@@ -121,21 +122,21 @@ public class TerrainController : MonoBehaviour
                     
                 } else {
                     bonusSpeed = 0;
-                    isOnColor = false;
+                    terrain.isOnColor = false;
                 }
 
-                currentColor = new Color(element[TraceSize, TraceSize, 2], element[TraceSize, TraceSize, 3], element[TraceSize, TraceSize, 4]);
+                terrain.currentColor = new Color(element[TraceSize, TraceSize, 2], element[TraceSize, TraceSize, 3], element[TraceSize, TraceSize, 4]);
             } else {
-                bonusSpeed = -floorFriction;
-                isOnZone = false;
-                isOnColor = false;
-                isOnCircuit = 0;
-                currentColor = Color.black;
+                bonusSpeed = -terrain.floorFriction;
+                terrain.isOnZone = false;
+                terrain.isOnColor = false;
+                terrain.isOnCircuit = 0;
+                terrain.currentColor = Color.black;
             }
         } else {
             bonusSpeed = lastBonusSpeed;
         }
-        ballController.bonusSpeed = ballController.speed * bonusSpeed;
+        ball.bonusSpeed = ball.speed * bonusSpeed;
         lastBonusSpeed = bonusSpeed;
     }
 

@@ -9,10 +9,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{c3fc915a-e795-4e40-5285-421616b4a984}</ProjectGuid>
+    <ProjectGuid>{a124b8cf-fb00-2cd8-add0-434207e954db}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>PathCreator</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -36,216 +36,17 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\ExternalLibs\PathCreator\Examples\Scripts\PathSpawner.cs" />
-     <Compile Include="Assets\ExternalLibs\SE Natural Bloom\Demo Scene\Scripts\SENBDLGlobal.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Fps\G_FpsText.cs" />
-     <Compile Include="Assets\ExternalLibs\FlexibleColorPicker\Scripts\FCP_SpriteMeshEditor.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\TiltShift.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\ImageEffectBase.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\BlurOptimized.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\GlobalFog.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\ContrastStretch.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
-     <Compile Include="Assets\ExternalLibs\Mirza Beig\Particle Systems\_Common\Scripts\CameraShake.cs" />
-     <Compile Include="Assets\BallRace\Scripts\AnimatedText.cs" />
-     <Compile Include="Assets\BallRace\Scripts\RaceController.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionCurves.cs" />
-     <Compile Include="Assets\ExternalLibs\PathCreator\Examples\Scripts\PathPlacer.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\GraphyDebugger.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\UI\IMovable.cs" />
-     <Compile Include="Assets\BallRace\Scripts\BB8Controller.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Graph\G_Graph.cs" />
-     <Compile Include="Assets\BallRace\Scripts\CheckPointController.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\NoiseAndScratches.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Particle Effects\Scripts\Demo\DemoParticleEmitterSwitcher.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
-     <Compile Include="Assets\ExternalLibs\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\LoopingParticleSystemsManager.cs" />
-     <Compile Include="Assets\ExternalLibs\SE Natural Bloom\Demo Scene\Scripts\SENBDLMainCube.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\GraphyManager.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\Blur.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\MotionBlur.cs" />
-     <Compile Include="Assets\ExternalLibs\Scripts\DriftCamera.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Fps\G_FpsManager.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Particle Effects\Scripts\Pulsate.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Util\G_Intstring.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scene\Customization Scripts\CustomizeGraphy.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Advanced\G_AdvancedData.cs" />
-     <Compile Include="Assets\ExternalLibs\Mirza Beig\Particle Systems\_Common\Scripts\AnimatedLight.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\ScreenSpaceAmbientObscurance.cs" />
-     <Compile Include="Assets\ExternalLibs\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\DemoManager.cs" />
-     <Compile Include="Assets\ExternalLibs\Scripts\CarSwitcher.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Particle Effects\Scripts\Helper\StaticExtensions.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\BloomOptimized.cs" />
-     <Compile Include="Assets\ExternalLibs\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\MouseFollow.cs" />
-     <Compile Include="Assets\BallRace\Scripts\OnlineController.cs" />
-     <Compile Include="Assets\BallRace\Scripts\TerrainController.cs" />
-     <Compile Include="Assets\ExternalLibs\Scripts\EasySuspension.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\Triangles.cs" />
-     <Compile Include="Assets\ExternalLibs\FlexibleColorPicker\Scripts\FlexibleColorPicker.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\SunShafts.cs" />
-     <Compile Include="Assets\BallRace\Scripts\BallHubController.cs" />
-     <Compile Include="Assets\BallRace\Scripts\VFXController.cs" />
-     <Compile Include="Assets\ExternalLibs\SE Natural Bloom\Demo Scene\Scripts\SENBDLGlowingOrbitingCube.cs" />
-     <Compile Include="Assets\BallRace\Scripts\LevelController.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Particle Effects\Scripts\Demo\DemoConstraintSwitcher.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Util\G_ExtensionMethods.cs" />
-     <Compile Include="Assets\ExternalLibs\PathCreator\Examples\Scripts\GeneratePathExample.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scene\Customization Scripts\UpdateTextWithSliderValue.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Fps\G_FpsGraph.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\ScreenOverlay.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Particle Effects\Scripts\Particles\Emitters\ParticleEmitterInRandomDirection.cs" />
-     <Compile Include="Assets\ExternalLibs\PathCreator\Examples\Scripts\RoadMeshCreator.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Ram\G_RamText.cs" />
-     <Compile Include="Assets\ExternalLibs\Scripts\WheelDrive.cs" />
-     <Compile Include="Assets\BallRace\Scripts\Hub.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\DepthOfField.cs" />
-     <Compile Include="Assets\ExternalLibs\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\FPSTest.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Audio\G_AudioManager.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Util\G_FloatString.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\PostEffectsHelper.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\ImageEffects.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Audio\G_AudioGraph.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Particle Effects\Scripts\Particles\ParticleBuilder.cs" />
-     <Compile Include="Assets\ExternalLibs\PathCreator\Examples\Scripts\PathSceneTool.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\ScreenSpaceAmbientOcclusion.cs" />
-     <Compile Include="Assets\ExternalLibs\PathCreator\Examples\Scripts\PathFollower.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\CreaseShading.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\ContrastEnhance.cs" />
-     <Compile Include="Assets\BallRace\Scripts\BallCamera.cs" />
-     <Compile Include="Assets\ExternalLibs\Cool Visual Effects - Part 1\Scripts\ConstantRotation.cs" />
-     <Compile Include="Assets\ExternalLibs\NeonSphere - Starter Pack\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scene\Customization Scripts\ForceSliderToPowerOf2.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Particle Effects\Scripts\Particles\CustomParticle.cs" />
-     <Compile Include="Assets\ExternalLibs\SE Natural Bloom\Demo Scene\Scripts\SENBDLCameraAnimation.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\NoiseAndGrain.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scene\Customization Scripts\ForceSliderToMultipleOf3.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Particle Effects\Scripts\Particles\ParticleFactory.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionRamp.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\Grayscale.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\SepiaTone.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Ram\G_RamManager.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Shader\G_GraphShader.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Particle Effects\Scripts\Helper\CircularArray.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\CameraMotionBlur.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Particle Effects\Scripts\Particles\Emitters\ParticleEmitterInObjectDirection.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Particle Effects\Scripts\Particles\ParticleRenderer.cs" />
-     <Compile Include="Assets\ExternalLibs\SE Natural Bloom\Demo Scene\Scripts\SENBDLOrbitingCube.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Particle Effects\Scripts\Demo\DemoSceneSwitcher.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Particle Effects\Scripts\Particles\Emitters\CustomParticleEmitter.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Util\G_Singleton.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Particle Effects\Scripts\Demo\DemoMouseController.cs" />
-     <Compile Include="Assets\ExternalLibs\Scripts\GraphOverlay.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\DepthOfFieldDeprecated.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Ram\G_RamGraph.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\Fisheye.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\UI\IModifiableState.cs" />
-     <Compile Include="Assets\ExternalLibs\Cool Visual Effects - Part 1\Scripts\EffectManager.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Fps\G_FpsMonitor.cs" />
-     <Compile Include="Assets\BallRace\Scripts\Model.cs" />
-     <Compile Include="Assets\ExternalLibs\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\OneshotParticleSystemsManager.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\PostEffectsBase.cs" />
-     <Compile Include="Assets\ExternalLibs\NeonSphere - Starter Pack\Scripts\CameraController.cs" />
-     <Compile Include="Assets\ExternalLibs\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\FPSDisplay.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\Quads.cs" />
-     <Compile Include="Assets\ExternalLibs\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\ParticleManager.cs" />
-     <Compile Include="Assets\BallRace\Scripts\BallController.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\EdgeDetection.cs" />
-     <Compile Include="Assets\ExternalLibs\SE Natural Bloom\Scripts\SENaturalBloomAndDirtyLens.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionLookup.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Scripts\Tonemapping.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Ram\G_RamMonitor.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Audio\G_AudioText.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scene\Color Picker\G_CUIColorPicker.cs" />
-     <Compile Include="Assets\ExternalLibs\FlexibleColorPicker\ExampleScene\FCP_ExampleScript.cs" />
-     <Compile Include="Assets\ExternalLibs\PE2D\Particle Effects\Scripts\Particles\ParticleEffector.cs" />
-     <Compile Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Scripts\Audio\G_AudioMonitor.cs" />
-     <Compile Include="Assets\BallRace\Scripts\ModelController.cs" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
-     <None Include="Assets\ExternalLibs\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\GlobalFog.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\VortexEffect.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrain.shader" />
-     <None Include="Assets\BallRace\TextShader.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\DLAA.shader" />
-     <None Include="Assets\ExternalLibs\SE Natural Bloom\Shaders\SEParticlesAdditive.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
-     <None Include="Assets\ExternalLibs\Mirza Beig\_DOCS\README - Inferno VFX.txt" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset3.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlurDX11.shader" />
-     <None Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Changelog.txt" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\VignettingShader.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurves.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\SSAOShader.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurvesSimple.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\Blend.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\SSAA.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\SunShaftsComposite.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\ConvertDepth.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\TwirlEffect.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Apply.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Adaptation.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
-     <None Include="Assets\ExternalLibs\SE Natural Bloom\Shaders\SENaturalBloomAndDirtyLens.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlur.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceAmbientObscurance.shader" />
-     <None Include="Assets\ExternalLibs\AllSkyFree\AllSkyFree_Readme.txt" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\CreaseApply.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA3Console.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionSelective.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\RadialBlur.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\VignetteShader.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\MotionBlurClear.shader" />
-     <None Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Shaders\GraphMobile.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\SepiaToneEffect.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrection3DLut.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\ContrastComposite.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\MinMaxReduction.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\Bokeh34.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionEffect.shader" />
-     <None Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Font\Northwest-Bold\ERIC-TIRADO-NORTHWEST-LICENSE.txt" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\FisheyeShader.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Particle Effects\Documentation\Quick Start.txt" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBloom.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfField34.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\MotionBlur.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableBlur.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBlur.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\PrepareSunShaftsBlur.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\ShowAlphaChannel.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\GrayscaleEffect.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\ChromaticAberrationShader.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrainDX11.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
-     <None Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Font\Roboto\LICENSE.txt" />
-     <None Include="Assets\ExternalLibs\SE Natural Bloom\Shaders\SEEmissiveTextured.shader" />
-     <None Include="Assets\ExternalLibs\FlexibleColorPicker\Materials\FCP_Gradient.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
-     <None Include="Assets\ExternalLibs\Tayx\Graphy - Ultimate Stats Monitor\Shaders\GraphStandard.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\EdgeDetectNormals.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA2.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderYUV.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Luminance.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
-     <None Include="Assets\BallRace\Fonts\LICENSE.txt" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\NFAA.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
-     <None Include="Assets\ExternalLibs\PE2D\Particle Effects\Documentation\Versions.txt" />
+     <Compile Include="Assets\ExternalLibs\PathCreator\Core\Runtime\Objects\EndOfPathInstruction.cs" />
+     <Compile Include="Assets\ExternalLibs\PathCreator\Core\Runtime\Objects\VertexPath.cs" />
+     <Compile Include="Assets\ExternalLibs\PathCreator\Core\Runtime\Objects\BezierPath.cs" />
+     <Compile Include="Assets\ExternalLibs\PathCreator\Core\Runtime\Utility\CubicBezierUtility.cs" />
+     <Compile Include="Assets\ExternalLibs\PathCreator\Core\Runtime\Objects\MinMax3D.cs" />
+     <Compile Include="Assets\ExternalLibs\PathCreator\Core\Runtime\Objects\GlobalDisplaySettings.cs" />
+     <Compile Include="Assets\ExternalLibs\PathCreator\Core\Runtime\Objects\PathSpace.cs" />
+     <Compile Include="Assets\ExternalLibs\PathCreator\Core\Runtime\Objects\PathCreatorData.cs" />
+     <Compile Include="Assets\ExternalLibs\PathCreator\Core\Runtime\Objects\PathCreator.cs" />
+     <Compile Include="Assets\ExternalLibs\PathCreator\Core\Runtime\Utility\MathUtility.cs" />
+     <Compile Include="Assets\ExternalLibs\PathCreator\Core\Runtime\Utility\VertexPathUtility.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -434,6 +235,18 @@
     </Reference>
     <Reference Include="UnityEditor">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.13f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Graphs">
+        <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.13f1/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+        <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="PackageManagerAssembly">
+        <HintPath>D:/Projects/BallRace/BallRace/Assets/ExternalLibs/Scripts/Editor/PackageManagerAssembly/PackageManagerAssembly.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory">
+        <HintPath>D:/Projects/BallRace/BallRace/Library/PackageCache/com.unity.render-pipelines.core@8.2.0/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.13f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -780,101 +593,14 @@
     <Reference Include="System.Xml.XPath.XDocument">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.13f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TerrainTools">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.TerrainTools.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Editor">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualEffectGraph.Runtime">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.VisualEffectGraph.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Editor">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+    <Reference Include="UnityEditor.UI">
+        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
         <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Searcher.Editor">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.Searcher.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Editor">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Runtime">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualEffectGraph.Editor">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.VisualEffectGraph.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ShaderGraph.Editor">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TerrainTools.Editor">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/Unity.TerrainTools.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-        <HintPath>D:/Projects/BallRace/BallRace/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="UniRx.csproj">
-      <Project>{39dc12b6-1411-7ae7-cc84-cf87a44260e5}</Project>
-      <Name>UniRx</Name>
-    </ProjectReference>
-    <ProjectReference Include="PathCreator.csproj">
-      <Project>{a124b8cf-fb00-2cd8-add0-434207e954db}</Project>
-      <Name>PathCreator</Name>
-    </ProjectReference>
-    <ProjectReference Include="PathCreatorEditor.csproj">
-      <Project>{c4eda3e3-93c5-0532-46d5-edbbea07c72d}</Project>
-      <Name>PathCreatorEditor</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

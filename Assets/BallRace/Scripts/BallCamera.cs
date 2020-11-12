@@ -5,10 +5,9 @@ using UnityEngine;
 public class BallCamera : MonoBehaviour
 {
 
-    public GameObject ball;
+    public Model.Ball ball = Model.Game.instance.ball;
 
-    Vector3 offset;
-    private BallController ballController;
+    public Vector3 offset;
 
     private Camera currentCamera;
 
@@ -16,17 +15,15 @@ public class BallCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        offset = transform.position - ball.transform.position;
-        ballController = ball.GetComponent<BallController>();
         currentCamera = GetComponent<Camera>();
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = ball.transform.position + Quaternion.Euler(0, ballController.rotation, 0) * offset;
+        transform.position = ball.position + Quaternion.Euler(0, ball.rotation, 0) * offset;
         //transform.LookAt(ball.transform);
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, ballController.rotation, transform.rotation.eulerAngles.z);
-        currentCamera.fieldOfView = Mathf.Lerp(currentCamera.fieldOfView, 60 + Mathf.Floor(ballController.velocity / 5) * 20, Time.deltaTime);
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, ball.rotation, transform.rotation.eulerAngles.z);
+        currentCamera.fieldOfView = Mathf.Lerp(currentCamera.fieldOfView, 60 + Mathf.Floor(ball.velocity / 5) * 20, Time.deltaTime);
     }
 }

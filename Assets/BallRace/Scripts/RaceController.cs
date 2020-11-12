@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Model;
 
 public class RaceController : MonoBehaviour
 {
 
-    public GameObject ball;
+    public Model.Race race = Model.Game.instance.race;
+
+    public Model.Ball ball = Model.Game.instance.ball;
 
     public LevelController currentLevel;
 
     public LevelController[] levels;
-
-    public BallController ballController;
 
     public TerrainController terrainController;
 
@@ -28,16 +29,16 @@ public class RaceController : MonoBehaviour
     public Hub hub;
 
 
-    public int maxLaps = 5;
+    // public int maxLaps = 5;
 
-    public int currentLap = 0;
+    // public int currentLap = 0;
 
 
-    public float timeElapsed = 0;
+    // public float timeElapsed = 0;
 
-    public float lapTime = 0;
+    // public float lapTime = 0;
 
-    public List<float> lapTimes;
+    // public List<float> lapTimes;
     public AudioClip checkPointSound;
 
 
@@ -48,15 +49,15 @@ public class RaceController : MonoBehaviour
     public AudioClip newRecordAudio;
     public AudioClip finalLapAudio;
 
-    public bool isRacing = false;
-    public bool isNewRecord = false;
+    // public bool isRacing = false;
+    // public bool isNewRecord = false;
 
     // public UnityEvent OnLeaderBoardChange;
-    public LeaderBoard leaderBoard;
+    // public LeaderBoard leaderBoard;
 
-    public string playerName = "UKN";
+    // public string playerName = "UKN";
 
-    public string version = "0.0.1";
+    // public string version = "0.0.1";
 
 
     public Color[] colors;
@@ -74,10 +75,11 @@ public class RaceController : MonoBehaviour
     {
         SetLevel(currentLevel);
         Reset();
-        playerName = PlayerPrefs.GetString("Name", "UKN");
-        Log("Welcome to BallRace (v" + version + ") !!!");
-        hub.nameText.text = playerName;
+        race.playerName = PlayerPrefs.GetString("Name", "UKN");
+        Log("Welcome to BallRace (v" + race.version + ") !!!");
+        hub.nameText.text = race.playerName;
         StartCoroutine(PlayWelcome());
+        playRandomColorCoroutine = StartCoroutine(PlayRandomColor());
     }
 
     IEnumerator PlayWelcome() {
@@ -94,22 +96,22 @@ public class RaceController : MonoBehaviour
     }
 
     void Update() {
-        if (currentLap > 0) {
-            timeElapsed += Time.deltaTime;
-            lapTime += Time.deltaTime;
+        if (race.currentLap > 0) {
+            race.timeElapsed += Time.deltaTime;
+            race.lapTime += Time.deltaTime;
         }
 
         string lastLaps = "";
 
-        for (var i = 0; i < lapTimes.Count; i++) {
-            lastLaps += convert(lapTimes[i]) + "\n";
+        for (var i = 0; i < race.lapTimes.Count; i++) {
+            lastLaps += convert(race.lapTimes[i]) + "\n";
         }
 
         hub.raceText.text = 
-            currentLap + "/" + maxLaps + "\n" +
-            convert(timeElapsed) + "\n" +
+            race.currentLap + "/" + race.maxLaps + "\n" +
+            convert(race.timeElapsed) + "\n" +
             lastLaps +
-            (isRacing && currentLap > 1 ? convert(lapTime) + "\n" : "");
+            (race.isRacing && race.currentLap > 1 ? convert(race.lapTime) + "\n" : "");
     }
 
     private string convert(float toConvert) {
@@ -129,40 +131,43 @@ public class RaceController : MonoBehaviour
             checkPoint.gameObject.SetActive(false);
             PlaySound(checkPointSound);
             if (nextCheckPointIndex == 0) {
-                currentLap++;
-                if (currentLap == 1) { // Start
+                race.currentLap++;
+                if (race.currentLap == 1) { // Start
                     PlaySound(startAudio);
-                    isRacing = true;
-                    timeElapsed = 0;
+                    race.isRacing = true;
+                    race.timeElapsed = 0;
+                    if (playRandomColorCoroutine != null) {
+                        StopCoroutine(playRandomColorCoroutine);
+                    }
                 } else {
-                    lapTimes.Add(lapTime);
+                    race.lapTimes.Add(race.lapTime);
                 }
-                if (currentLap > maxLaps) { // End
-                    isRacing = false;
-                    currentLap = 0;
+                if (race.currentLap > race.maxLaps) { // End
+                    race.isRacing = false;
+                    race.currentLap = 0;
                     CheckLeaderBoard();
                     playRandomColorCoroutine = StartCoroutine(PlayRandomColor());
                     return;
                 }
-                if (currentLap == maxLaps) {
-                    Log(currentLap == maxLaps ? "FINAL LAP !!!" : "LAP #" + currentLap);
+                if (race.currentLap == race.maxLaps) {
+                    Log(race.currentLap == race.maxLaps ? "FINAL LAP !!!" : "LAP #" + race.currentLap);
                     PlaySound(finalLapAudio);
                 } else {
-                    Log(currentLap == maxLaps ? "FINAL LAP !!!" : "LAP #" + currentLap);
+                    Log(race.currentLap == race.maxLaps ? "FINAL LAP !!!" : "LAP #" + race.currentLap);
                 }
-                lapTime = 0;
+                race.lapTime = 0;
             }
             nextCheckPointIndex = (nextCheckPointIndex + 1) % currentLevel.checkPoints.Length;
             nextCheckPoint = currentLevel.checkPoints[nextCheckPointIndex];
             nextCheckPoint.gameObject.SetActive(true);
             if (nextCheckPointIndex == 0) {
-                if (currentLap == maxLaps) {
+                if (race.currentLap == race.maxLaps) {
                     nextCheckPoint.ChangeText("FINISH");    
                 } else {
-                    nextCheckPoint.ChangeText("LAP " + (currentLap + 1));    
+                    nextCheckPoint.ChangeText("LAP " + (race.currentLap + 1));    
                 }
             } else {
-                nextCheckPoint.ChangeText("LAP " + currentLap + "." + nextCheckPointIndex);
+                nextCheckPoint.ChangeText("LAP " + race.currentLap + "." + nextCheckPointIndex);
             }
 
             hub.color = color;
@@ -174,19 +179,19 @@ public class RaceController : MonoBehaviour
 
     void CheckLeaderBoard() {
         var i = 0;
-        for (; i < leaderBoard.raceTimes.Count; i++) {
-            var raceTime = leaderBoard.raceTimes[i];
-            if (timeElapsed < raceTime.time) {
+        for (; i < race.leaderBoard.raceTimes.Count; i++) {
+            var raceTime = race.leaderBoard.raceTimes[i];
+            if (race.timeElapsed < raceTime.time) {
                 break;       
             }
         }
 
-        if (i < leaderBoard.raceTimes.Count) {
-            leaderBoard.raceTimes.Insert(i, new RaceTime(playerName, timeElapsed));
-            leaderBoard.raceTimes.RemoveAt(leaderBoard.raceTimes.Count - 1);
-            SetLeaderBoard(leaderBoard);
+        if (i < race.leaderBoard.raceTimes.Count) {
+            race.leaderBoard.raceTimes.Insert(i, new RaceTime(race.playerName, race.timeElapsed));
+            race.leaderBoard.raceTimes.RemoveAt(race.leaderBoard.raceTimes.Count - 1);
+            SetLeaderBoard(race.leaderBoard);
             onlineController.SaveLeaderBoard();
-            isNewRecord = true;
+            race.isNewRecord = true;
             Log("NEW RECORD !!! CONGRATULATION !!!");
             PlaySound(newRecordAudio);
         } else {
@@ -202,7 +207,7 @@ public class RaceController : MonoBehaviour
         }
 
         foreach(var checkPoint in currentLevel.checkPoints) {
-            checkPoint.ballController = ballController;
+            checkPoint.ball = ball;
             checkPoint.raceController = this;
             checkPoint.gameObject.SetActive(false);
         }
@@ -216,19 +221,19 @@ public class RaceController : MonoBehaviour
         color = GetRandomColor();
         nextCheckPoint.ChangeColor(color);
 
-        ball.transform.position = currentLevel.startPosition.position;
-        ballController.rotation = currentLevel.startPosition.rotation.eulerAngles.y;
+        ball.position = currentLevel.startPosition.position;
+        ball.rotation = currentLevel.startPosition.rotation.eulerAngles.y;
 
         terrainController.CleanTerrain();
 
-        timeElapsed = 0;
-        lapTime = 0;
+        race.timeElapsed = 0;
+        race.lapTime = 0;
 
-        lapTimes = new List<float>();
+        race.lapTimes = new List<float>();
 
-        currentLap = 0;
-        isRacing = false;
-        isNewRecord = false;
+        race.currentLap = 0;
+        race.isRacing = false;
+        race.isNewRecord = false;
         onlineController.LoadLeaderBoard();
     }
 
@@ -263,12 +268,12 @@ public class RaceController : MonoBehaviour
         }
 
         hub.leaderBoardText.text = text;
-        this.leaderBoard = leaderBoard; 
+        race.leaderBoard = leaderBoard; 
     }
 
     public void ChangePlayerName(string value) {
-        playerName = value;
-        PlayerPrefs.SetString("Name", playerName);
-        hub.nameText.text = playerName;
+        race.playerName = value;
+        PlayerPrefs.SetString("Name", race.playerName);
+        hub.nameText.text = race.playerName;
     }
 }

@@ -5,26 +5,28 @@ using UnityEngine;
 public class BallController : MonoBehaviour
 {
 
+    public Model.Ball ball = Model.Game.instance.ball;
+
     Rigidbody rb;
-    public float speed = 1f;
+    // public float speed = 1f;
 
-    public float bonusSpeed = 0;
+    // public float bonusSpeed = 0;
 
-    public float turnSpeed = 1f;
+    // public float turnSpeed = 1f;
 
-    public float jumpSpeed = 1f;
+    // public float jumpSpeed = 1f;
 
 
-    public float rotation = 0;
+    // public float rotation = 0;
 
     public GameObject ballHub;
 
 
-    public float distanceToGround;
+    // public float distanceToGround;
 
-    public float velocity;
+    // public float velocity;
 
-    public Color color;
+    // public Color color;
 
     private Color lastColor;
 
@@ -37,38 +39,61 @@ public class BallController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+    private Vector3 lastPosition = Vector3.zero;
+
+
+    void Update() {
+        if (ball.position != lastPosition) {
+            transform.position = ball.position;
+        } else {
+            ball.position = transform.position;
+        }
+        lastPosition = ball.position;
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
-        velocity = rb.velocity.magnitude;
-        rotation = (rotation + Input.GetAxis("Horizontal") * turnSpeed) % 360; 
+        // if (ball.position != lastPosition) {
+        //     transform.position = ball.position;
+        // } else {
+        //     ball.position = transform.position;
+        // }
+        // lastPosition = ball.position;
+        ball.velocity = rb.velocity.magnitude;
+        ball.rotation = (ball.rotation + Input.GetAxis("Horizontal") * ball.turnSpeed) % 360; 
         RaycastHit hit = new RaycastHit();
         if (Physics.Raycast (transform.position, -Vector3.up, out hit)) {
-            distanceToGround = hit.distance;
+            ball.distanceToGround = hit.distance;
 
-            var v3 = new Vector3(0, 0, Input.GetAxis("Vertical") * (speed + bonusSpeed));
-            rb.AddForce(Quaternion.Euler(0, rotation, 0) * v3);
+            var v3 = new Vector3(0, 0, Input.GetAxis("Vertical") * (ball.speed + ball.bonusSpeed));
+            rb.AddForce(Quaternion.Euler(0, ball.rotation, 0) * v3);
 
-            if (distanceToGround < 1) {
+            if (ball.distanceToGround < 1) {
                 if (Input.GetButton("Jump")) {
-                    rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
+                    rb.AddForce(Vector3.up * ball.jumpSpeed, ForceMode.Impulse);
                 }
             }
         }
-        if (color != lastColor) {
-            GetComponent<Renderer>().material.color = color;
-            ballHub.GetComponent<Renderer>().material.color = color;
-            lastColor = color;
+        if (ball.color != lastColor) {
+            GetComponent<Renderer>().material.color = ball.color;
+            ballHub.GetComponent<Renderer>().material.color = ball.color;
+            lastColor = ball.color;
         }
     
  
-        var scaledVelocity = Remap(Mathf.Clamp(velocity, 0, 20), 0, 20, 0f, 1.5f);
+        var scaledVelocity = Remap(Mathf.Clamp(ball.velocity, 0, 20), 0, 20, 0f, 1.5f);
  
         // set volume based on volume curve
-        rollingAudio.volume = distanceToGround < 1 ? 1 : 0;
+        rollingAudio.volume = ball.distanceToGround < 1 ? 1 : 0;
  
         // set pitch based on pitch curve
         rollingAudio.pitch = scaledVelocity;
+    }
+
+    void LateUpdate()
+    {
+
     }
  
  

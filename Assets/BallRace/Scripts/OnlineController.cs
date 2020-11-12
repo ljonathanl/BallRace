@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using Model;
 
 
 
@@ -75,8 +76,8 @@ public class OnlineController : MonoBehaviour
     }
 
     IEnumerator SaveRaceLeaderBoard() {
-        raceController.leaderBoard.version += 1; 
-        string json = JsonUtility.ToJson(raceController.leaderBoard);
+        raceController.race.leaderBoard.version += 1; 
+        string json = JsonUtility.ToJson(raceController.race.leaderBoard);
         UnityWebRequest www = UnityWebRequest.Put(apiUrl + raceId, json);
         www.SetRequestHeader("Accept", "application/json");
         www.SetRequestHeader("Content-Type", "application/json");
@@ -87,7 +88,7 @@ public class OnlineController : MonoBehaviour
             Debug.Log(www.error);
         }
         else {
-            Debug.Log("LeaderBoard saved v" + raceController.leaderBoard.version);
+            Debug.Log("LeaderBoard saved v" + raceController.race.leaderBoard.version);
         }
     }
 }

@@ -1,7 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniRx", "UniRx.csproj", "{39dc12b6-1411-7ae7-cc84-cf87a44260e5}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{c3fc915a-e795-4e40-5285-421616b4a984}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathCreator", "PathCreator.csproj", "{a124b8cf-fb00-2cd8-add0-434207e954db}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniRx.Examples", "UniRx.Examples.csproj", "{c69317ec-2ff5-fc10-7b3a-bf00b5b927a8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathCreatorEditor", "PathCreatorEditor.csproj", "{c4eda3e3-93c5-0532-46d5-edbbea07c72d}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{bdc7225a-0d2a-83f3-ab72-5fa58dd763ab}"
 EndProject
@@ -10,8 +18,16 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39dc12b6-1411-7ae7-cc84-cf87a44260e5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39dc12b6-1411-7ae7-cc84-cf87a44260e5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{c3fc915a-e795-4e40-5285-421616b4a984}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{c3fc915a-e795-4e40-5285-421616b4a984}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{a124b8cf-fb00-2cd8-add0-434207e954db}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{a124b8cf-fb00-2cd8-add0-434207e954db}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{c69317ec-2ff5-fc10-7b3a-bf00b5b927a8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{c69317ec-2ff5-fc10-7b3a-bf00b5b927a8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{c4eda3e3-93c5-0532-46d5-edbbea07c72d}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{c4eda3e3-93c5-0532-46d5-edbbea07c72d}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{bdc7225a-0d2a-83f3-ab72-5fa58dd763ab}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{bdc7225a-0d2a-83f3-ab72-5fa58dd763ab}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection

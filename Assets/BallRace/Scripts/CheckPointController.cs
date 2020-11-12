@@ -5,7 +5,7 @@ using UnityEngine;
 public class CheckPointController : MonoBehaviour
 {
 
-    public BallController ballController;
+    public Model.Ball ball = Model.Game.instance.ball;
 
     public RaceController raceController;
 
@@ -18,15 +18,15 @@ public class CheckPointController : MonoBehaviour
 
 
     void Update() {
-        if (ballController) {
-            text.transform.rotation = Quaternion.Euler(0, ballController.rotation, 0);
+        if (ball != null) {
+            text.transform.rotation = Quaternion.Euler(0, ball.rotation, 0);
             textHub.transform.rotation = Quaternion.Euler(90, 0, 0);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (ballController && other.gameObject == ballController.gameObject) {
+        if (ball != null && other.gameObject.GetComponent<BallController>()) {
             raceController.OnCheckPoint(this);
         }
     }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class BallHubController : MonoBehaviour
 {
-    public BallController ballController; 
+    public Model.Ball ball = Model.Game.instance.ball; 
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = ballController.transform.position + Vector3.up * 10;
-        transform.rotation = Quaternion.Euler(0, ballController.rotation, 0);
+        transform.position = ball.position + Vector3.up * 10;
+        transform.rotation = Quaternion.Euler(0, ball.rotation, 0);
     }
 }
